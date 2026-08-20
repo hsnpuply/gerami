@@ -1,0 +1,205 @@
+@import "tailwindcss";
+
+/* ========================================
+   Custom Theme Configuration
+   ======================================== */
+@theme {
+  --color-black: #000;
+  --color-white: #fff;
+  --color-primary: #ffc107;
+  --color-primary-dark: #dea600;
+  --color-dim: #050606;
+  --color-dim-alpha: #261a00;
+  --color-gray-light: #f5f5f5;
+  --color-gray-mid: #ebebeb;
+  --color-gray-dark: #494d55;
+  --color-background-light: #fcfbfa;
+  --color-background-mid: #f8f5f0;
+  --color-background-dark: #231a01;
+  --color-background-silver-light: #fbfbfb;
+  --color-background-silver-mid: #f5f5f5;
+  --color-background-gold-mid: #f8f5f0;
+  --color-success: #11834c;
+  --color-success-light: #ebfff5;
+  --color-success-dark: #0f6c3f;
+  --color-warning: #eca009;
+  --color-warning-light: #fef6e7;
+  --color-warning-dark: #da9401;
+  --color-danger: #a81212;
+  --color-danger-light: #fff2f2;
+  --color-danger-dark: #8d1212;
+  --color-info: #2c71e8;
+  --color-info-light: #eaf2ff;
+  --color-info-dark: #2663cc;
+
+  --font-body: "Estedad", sans-serif;
+  --font-heading: "Peyda", sans-serif;
+
+  --container-max: 1152px;
+}
+
+/* ========================================
+   CSS Custom Properties (for legacy use)
+   ======================================== */
+:root {
+  --default-transition-duration: 0.25s;
+  --black: #000;
+  --white: #fff;
+  --primary: #ffc107;
+  --primary-dark: #dea600;
+  --dim: #050606;
+  --dim-alpha: #261a00;
+  --gray-light: #f5f5f5;
+  --gray-mid: #ebebeb;
+  --gray-dark: #494d55;
+  --background-light: #fcfbfa;
+  --background-mid: #f8f5f0;
+  --background-dark: #231a01;
+  --background-silver-light: #fbfbfb;
+  --background-silver-mid: #f5f5f5;
+  --background-gold-mid: #f8f5f0;
+  --success: #11834c;
+  --success-light: #ebfff5;
+  --success-dark: #0f6c3f;
+  --warning: #eca009;
+  --warning-light: #fef6e7;
+  --warning-dark: #da9401;
+  --danger: #a81212;
+  --danger-light: #fff2f2;
+  --danger-dark: #8d1212;
+  --info: #2c71e8;
+  --info-light: #eaf2ff;
+  --info-dark: #2663cc;
+}
+
+/* ========================================
+   Font Faces — Estedad (Body)
+   Source: aminabedi68/Estedad — OFL License
+   ======================================== */
+@font-face {
+  font-family: "Estedad";
+  font-style: normal;
+  font-weight: 100;
+  font-display: swap;
+  src: url("@/assets/fonts/estedad/Estedad-Thin.woff2") format("woff2");
+}
+
+@font-face {
+  font-family: "Estedad";
+  font-style: normal;
+  font-weight: 200;
+  font-display: swap;
+  src: url("@/assets/fonts/estedad/Estedad-ExtraLight.woff2") format("woff2");
+}
+
+@font-face {
+  font-family: "Estedad";
+  font-style: normal;
+  font-weight: 300;
+  font-display: swap;
+  src: url("@/assets/fonts/estedad/Estedad-Light.woff2") format("woff2");
+}
+
+@font-face {
+  font-family: "Estedad";
+  font-style: normal;
+  font-weight: 400;
+  font-display: swap;
+  src: url("@/assets/fonts/estedad/Estedad-Regular.woff2") format("woff2");
+}
+
+@font-face {
+  font-family: "Estedad";
+  font-style: normal;
+  font-weight: 500;
+  font-display: swap;
+  src: url("@/assets/fonts/estedad/Estedad-Medium.woff2") format("woff2");
+}
+
+@font-face {
+  font-family: "Estedad";
+  font-style: normal;
+  font-weight: 600;
+  font-display: swap;
+  src: url("@/assets/fonts/estedad/Estedad-SemiBold.woff2") format("woff2");
+}
+
+@font-face {
+  font-family: "Estedad";
+  font-style: normal;
+  font-weight: 700;
+  font-display: swap;
+  src: url("@/assets/fonts/estedad/Estedad-Bold.woff2") format("woff2");
+}
+
+@font-face {
+  font-family: "Estedad";
+  font-style: normal;
+  font-weight: 800;
+  font-display: swap;
+  src: url("@/assets/fonts/estedad/Estedad-ExtraBold.woff2") format("woff2");
+}
+
+@font-face {
+  font-family: "Estedad";
+  font-style: normal;
+  font-weight: 900;
+  font-display: swap;
+  src: url("@/assets/fonts/estedad/Estedad-Black.woff2") format("woff2");
+}
+
+/* ========================================
+   Font Faces — Peyda (Headings)
+   Source: PeydaType (woff only, commercial)
+   ======================================== */
+@font-face {
+  font-family: "Peyda";
+  font-style: normal;
+  font-weight: 400;
+  font-display: swap;
+  src: url("@/assets/fonts/peyda/PeydaWeb-Regular.woff") format("woff");
+}
+
+@font-face {
+  font-family: "Peyda";
+  font-style: normal;
+  font-weight: 600;
+  font-display: swap;
+  src: url("@/assets/fonts/peyda/PeydaWeb-SemiBold.woff") format("woff");
+}
+
+@font-face {
+  font-family: "Peyda";
+  font-style: normal;
+  font-weight: 700;
+  font-display: swap;
+  src: url("@/assets/fonts/peyda/PeydaWeb-Bold.woff") format("woff");
+}
+
+@font-face {
+  font-family: "Peyda";
+  font-style: normal;
+  font-weight: 900;
+  font-display: swap;
+  src: url("@/assets/fonts/peyda/PeydaWeb-Black.woff") format("woff");
+}
+
+/* ========================================
+   Base Styles
+   ======================================== */
+@layer base {
+  html {
+    direction: rtl;
+    font-family: var(--font-body);
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+  }
+
+  body {
+    @apply bg-background-light text-dim m-0 p-0;
+  }
+
+  h1, h2, h3, h4, h5, h6 {
+    font-family: var(--font-heading);
+  }
+}
