@@ -1,6 +1,7 @@
 <script setup lang="ts">
 import { HeroSection } from '@/components/hero'
 import { FeaturesSection } from '@/components/features'
+import { MetalsSection } from '@/components/metals'
 import { MarketPriceSection } from '@/components/market'
 </script>
 
@@ -9,5 +10,6 @@ import { MarketPriceSection } from '@/components/market'
     <HeroSection />
     <FeaturesSection />
     <MarketPriceSection />
+    <MetalsSection />
   </div>
 </template>

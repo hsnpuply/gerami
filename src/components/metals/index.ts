@@ -1,0 +1,5 @@
+export { default as MetalsSection } from './MetalsSection.vue'
+export { default as MetalItemRow } from './MetalItemRow.vue'
+export { default as MetalVisualCard } from './MetalVisualCard.vue'
+export { default as MetalDetails } from './MetalDetails.vue'
+export * from '@/types/metals'

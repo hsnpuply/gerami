@@ -294,7 +294,7 @@ onUnmounted(() => {
       <!-- Floating Price Tooltip Card -->
       <div
         v-if="hoverPos && hoveredPoint"
-        class="absolute z-20 pointer-events-none transition-all duration-75 transform -translate-y-full mb-2 bg-white rounded-2xl p-3 shadow-lg border border-gray-mid/70 text-right min-w-[145px]"
+        class="absolute z-[9999999999] pointer-events-none transition-all duration-75 transform -translate-y-full mb-2 bg-white rounded-2xl p-3 shadow-lg border border-gray-mid/70 text-right min-w-[145px]"
         :style="{
           left: `${Math.max(10, Math.min(hoverPos.x - 70, (containerRef?.offsetWidth || 300) - 160))}px`,
           top: `${Math.max(10, hoverPos.y - 12)}px`
