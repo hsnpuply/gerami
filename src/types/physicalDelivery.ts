@@ -6,6 +6,8 @@ export interface DeliveryFeature {
 export interface DeliveryAddress {
   title: string
   lines: string[]
+  workingHours?: string
+  phone?: string
 }
 
 export interface DeliveryMapEmbed {
@@ -13,6 +15,8 @@ export interface DeliveryMapEmbed {
   embedUrl: string
   /** Open-in-maps link */
   openUrl: string
+  /** Neshan or Balad routing url */
+  routingUrl?: string
   /** Alt text for the map iframe */
   alt?: string
 }
@@ -22,8 +26,8 @@ export interface PhysicalDeliveryConfig {
   badgeText: string
   /** Main heading */
   heading: string
-  /** Subtitle */
-  subtitle: string
+  /** Subtitle or secondary text */
+  subtitle?: string
   /** Feature checklist items */
   features: DeliveryFeature[]
   /** Map embed configuration */
@@ -39,3 +43,4 @@ export interface PhysicalDeliveryConfig {
   /** Left image alt text */
   imageLeftAlt?: string
 }
+

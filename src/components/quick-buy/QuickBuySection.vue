@@ -1,5 +1,5 @@
 <script setup lang="ts">
-import { ref, onMounted, onUnmounted, computed } from 'vue'
+import { ref, onMounted, onUnmounted } from 'vue'
 import AppContainer from '@/components/ui/AppContainer.vue'
 import type { QuickBuyStep } from '@/types/steps'
 import step1Img from '@/assets/images/steps/step-1.png'
@@ -36,7 +36,6 @@ const steps: QuickBuyStep[] = [
   }
 ]
 
-const sectionRef = ref<HTMLElement | null>(null)
 const timelineContainerRef = ref<HTMLElement | null>(null)
 const scrollProgress = ref(0)
 const visibleSteps = ref<Set<number>>(new Set())
