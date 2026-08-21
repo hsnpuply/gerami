@@ -3,6 +3,8 @@ import { HeroSection } from '@/components/hero'
 import { FeaturesSection } from '@/components/features'
 import { MetalsSection } from '@/components/metals'
 import { MarketPriceSection } from '@/components/market'
+import { PhysicalDeliverySection } from '@/components/delivery'
+import { QuickBuySection } from '@/components/quick-buy'
 </script>
 
 <template>
@@ -11,5 +13,7 @@ import { MarketPriceSection } from '@/components/market'
     <FeaturesSection />
     <MarketPriceSection />
     <MetalsSection />
+    <QuickBuySection />
+    <PhysicalDeliverySection />
   </div>
 </template>
