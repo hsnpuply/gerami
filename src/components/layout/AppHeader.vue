@@ -1,41 +1,85 @@
 <script setup lang="ts">
-import { useAppStore } from '@/stores/app'
-import AppContainer from '@/components/ui/AppContainer.vue'
-import DesktopNavigation from './DesktopNavigation.vue'
-import HeaderLogo from './HeaderLogo.vue'
-import MobileMenu from './MobileMenu.vue'
+import { useAppStore } from "@/stores/app";
+import AppContainer from "@/components/ui/AppContainer.vue";
+import DesktopNavigation from "./DesktopNavigation.vue";
+import HeaderLogo from "./HeaderLogo.vue";
+import MobileMenu from "./MobileMenu.vue";
 
-const appStore = useAppStore()
+const appStore = useAppStore();
 </script>
 
 <template>
-  <header class="sticky right-0 top-0 z-50 border-b border-gray-mid bg-white/95 backdrop-blur-[96px]">
+  <header
+    class="sticky right-0 top-0 z-50 border-b border-gray-mid bg-white/95 backdrop-blur-[96px]"
+  >
     <AppContainer>
-      <div class="flex items-center justify-between py-3">
-        <HeaderLogo @click="appStore.closeMobileMenu()" />
+      <div class="flex items-center justify-between gap-3 py-3 container mx-auto px-3">
+        <div class="flex items-center gap-2">
+          <button
+            type="button"
+            class="inline-flex h-10 w-10 shrink-0 items-center justify-center rounded-lg text-dim transition-colors duration-200 hover:bg-gray-light lg:hidden"
+            :aria-expanded="appStore.isMobileMenuOpen"
+            aria-controls="mobile-menu"
+            :aria-label="
+              appStore.isMobileMenuOpen ? 'بستن منو' : 'باز کردن منو'
+            "
+            @click="appStore.toggleMobileMenu()"
+          >
+            <svg
+              v-if="!appStore.isMobileMenuOpen"
+              class="h-6 w-6"
+              fill="none"
+              viewBox="0 0 24 24"
+              stroke-width="1.5"
+              stroke="currentColor"
+              aria-hidden="true"
+            >
+              <path
+                stroke-linecap="round"
+                stroke-linejoin="round"
+                d="M3.75 6.75h16.5M3.75 12h16.5m-16.5 5.25h16.5"
+              />
+            </svg>
+            <svg
+              v-else
+              class="h-6 w-6"
+              fill="none"
+              viewBox="0 0 24 24"
+              stroke-width="1.5"
+              stroke="currentColor"
+              aria-hidden="true"
+            >
+              <path
+                stroke-linecap="round"
+                stroke-linejoin="round"
+                d="M6 18L18 6M6 6l12 12"
+              />
+            </svg>
+          </button>
+
+          <div class="flex flex-1 justify-center lg:flex-none">
+            <HeaderLogo @click="appStore.closeMobileMenu()" />
+          </div>
+        </div>
         <DesktopNavigation />
 
         <div class="hidden items-center lg:flex">
-          <router-link to="/login" class="flex h-10 items-center justify-center rounded-full bg-dim px-5 text-sm font-medium text-white transition-all hover:scale-[1.05] hover:bg-background-dark">
+          <router-link
+            to="/login"
+            class="flex h-10 items-center justify-center rounded-full bg-dim px-5 text-sm font-medium text-white transition-all hover:scale-[1.05] hover:bg-background-dark"
+          >
             ورود یا ثبت‌نام
           </router-link>
         </div>
 
-        <button
-          type="button"
-          class="inline-flex h-10 w-10 items-center justify-center rounded-lg text-dim transition-colors duration-200 hover:bg-gray-light lg:hidden"
-          :aria-expanded="appStore.isMobileMenuOpen"
-          aria-controls="mobile-menu"
-          :aria-label="appStore.isMobileMenuOpen ? 'بستن منو' : 'باز کردن منو'"
-          @click="appStore.toggleMobileMenu()"
-        >
-          <svg v-if="!appStore.isMobileMenuOpen" class="h-6 w-6" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" aria-hidden="true">
-            <path stroke-linecap="round" stroke-linejoin="round" d="M3.75 6.75h16.5M3.75 12h16.5m-16.5 5.25h16.5" />
-          </svg>
-          <svg v-else class="h-6 w-6" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" aria-hidden="true">
-            <path stroke-linecap="round" stroke-linejoin="round" d="M6 18L18 6M6 6l12 12" />
-          </svg>
-        </button>
+        <div class="flex shrink-0 items-center lg:hidden">
+          <router-link
+            to="/login"
+            class="flex h-10 items-center justify-center whitespace-nowrap rounded-full bg-dim px-3 text-xs font-medium text-white transition-colors duration-200 hover:bg-background-dark"
+          >
+            ورود یا ثبت‌نام
+          </router-link>
+        </div>
       </div>
     </AppContainer>
 

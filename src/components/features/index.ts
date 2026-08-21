@@ -1,0 +1,8 @@
+export { default as FeaturesSection } from './FeaturesSection.vue'
+export { default as FeatureCard } from './FeatureCard.vue'
+export { default as FeatureLicenseCard } from './FeatureLicenseCard.vue'
+export { default as LicenseMarquee } from './LicenseMarquee.vue'
+export { default as MobileFeaturesSlider } from './MobileFeaturesSlider.vue'
+export { default as MobileLicensesBar } from './MobileLicensesBar.vue'
+export * from '@/composables/useFeatures'
+export * from '@/types/features'

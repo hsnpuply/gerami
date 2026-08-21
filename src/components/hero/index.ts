@@ -1,0 +1,6 @@
+export { default as HeroSection } from './HeroSection.vue'
+export { default as HeroContent } from './HeroContent.vue'
+export { default as HeroVisual } from './HeroVisual.vue'
+export { default as HeroPriceCard } from './HeroPriceCard.vue'
+export * from '@/composables/useHeroPrices'
+export * from '@/types/hero'

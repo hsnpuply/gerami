@@ -1,11 +1,22 @@
 <script setup lang="ts">
-defineProps<{
-  tag?: string
-}>()
+withDefaults(
+  defineProps<{
+    tag?: string
+    customClass?: string
+  }>(),
+  {
+    tag: 'div',
+    customClass: ''
+  }
+)
 </script>
 
 <template>
-  <div class="mx-auto w-full max-w-[1152px] ">
+  <component
+    :is="tag"
+    class="mx-auto w-full max-w-[1184px] px-4 sm:px-6 lg:px-8"
+    :class="customClass"
+  >
     <slot />
-  </div>
+  </component>
 </template>
